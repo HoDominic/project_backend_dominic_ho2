@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\domin\\Desktop\\MCT2\\backend-programming\\labo\\project_backend_dominic_ho2\\BookAPI\\BookAPI.csproj": {}
+    "c:\\Users\\domin\\Desktop\\MCT2\\backend-programming\\labo\\project_backend_dominic_ho2\\BookAPI\\BookAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\domin\\Desktop\\MCT2\\backend-programming\\labo\\project_backend_dominic_ho2\\BookAPI\\BookAPI.csproj": {
+    "c:\\Users\\domin\\Desktop\\MCT2\\backend-programming\\labo\\project_backend_dominic_ho2\\BookAPI\\BookAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\domin\\Desktop\\MCT2\\backend-programming\\labo\\project_backend_dominic_ho2\\BookAPI\\BookAPI.csproj",
+        "projectUniqueName": "c:\\Users\\domin\\Desktop\\MCT2\\backend-programming\\labo\\project_backend_dominic_ho2\\BookAPI\\BookAPI.csproj",
         "projectName": "BookAPI",
-        "projectPath": "C:\\Users\\domin\\Desktop\\MCT2\\backend-programming\\labo\\project_backend_dominic_ho2\\BookAPI\\BookAPI.csproj",
+        "projectPath": "c:\\Users\\domin\\Desktop\\MCT2\\backend-programming\\labo\\project_backend_dominic_ho2\\BookAPI\\BookAPI.csproj",
         "packagesPath": "C:\\Users\\domin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\domin\\Desktop\\MCT2\\backend-programming\\labo\\project_backend_dominic_ho2\\BookAPI\\obj\\",
+        "outputPath": "c:\\Users\\domin\\Desktop\\MCT2\\backend-programming\\labo\\project_backend_dominic_ho2\\BookAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -46,6 +46,16 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"
