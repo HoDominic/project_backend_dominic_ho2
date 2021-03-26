@@ -9,6 +9,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BookAPI.Controllers
 {
+
+    [ApiController]
+    [Route("api")]
     public class BookController : ControllerBase
     {
 
