@@ -83,6 +83,8 @@ namespace BookAPI.Controllers
 
 
 
+
+
         [HttpPost]
         [Route("book")]
 
@@ -99,6 +101,29 @@ namespace BookAPI.Controllers
                 return new StatusCodeResult(500);
             }
         }
+
+        [HttpDelete]
+        [Route("book/{bookId}")]
+
+        public async Task<ActionResult<Book>> DeleteBook(Book book, string bookId)
+        {
+            try
+            {
+                _context.Books.Remove(book);
+                await _context.SaveChangesAsync();
+                return book;
+
+
+            }
+            catch (Exception ex)
+            {
+                return new StatusCodeResult(500);
+            }
+        }
+
+
+
+
     }
 
 }
