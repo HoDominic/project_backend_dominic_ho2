@@ -13,7 +13,7 @@ services:
     volumes: 
         - .\db\data:/var/opt/mssql/data
   api:
-    image: bookapi_new
+    image: bookapi_new2
     build:
       context: .
       dockerfile: ./Dockerfile

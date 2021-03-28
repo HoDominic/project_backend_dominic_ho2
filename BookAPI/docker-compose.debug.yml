@@ -4,7 +4,7 @@ version: '3.4'
 
 services:
   bookapi:
-    image: bookapi_new
+    image: bookapi_new2
     build:
       context: .
       dockerfile: ./Dockerfile
