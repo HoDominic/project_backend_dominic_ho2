@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\domin\\Desktop\\MCT2\\backend-programming\\labo\\project_backend_dominic_ho2\\BookAPI\\BookAPI.csproj": {}
+    "C:\\Users\\domin\\Desktop\\MCT2\\backend-programming\\labo\\project_backend_dominic_ho2\\BookAPI - services\\BookAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\domin\\Desktop\\MCT2\\backend-programming\\labo\\project_backend_dominic_ho2\\BookAPI\\BookAPI.csproj": {
+    "C:\\Users\\domin\\Desktop\\MCT2\\backend-programming\\labo\\project_backend_dominic_ho2\\BookAPI - services\\BookAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\domin\\Desktop\\MCT2\\backend-programming\\labo\\project_backend_dominic_ho2\\BookAPI\\BookAPI.csproj",
+        "projectUniqueName": "C:\\Users\\domin\\Desktop\\MCT2\\backend-programming\\labo\\project_backend_dominic_ho2\\BookAPI - services\\BookAPI.csproj",
         "projectName": "BookAPI",
-        "projectPath": "C:\\Users\\domin\\Desktop\\MCT2\\backend-programming\\labo\\project_backend_dominic_ho2\\BookAPI\\BookAPI.csproj",
+        "projectPath": "C:\\Users\\domin\\Desktop\\MCT2\\backend-programming\\labo\\project_backend_dominic_ho2\\BookAPI - services\\BookAPI.csproj",
         "packagesPath": "C:\\Users\\domin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\domin\\Desktop\\MCT2\\backend-programming\\labo\\project_backend_dominic_ho2\\BookAPI\\obj\\",
+        "outputPath": "C:\\Users\\domin\\Desktop\\MCT2\\backend-programming\\labo\\project_backend_dominic_ho2\\BookAPI - services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

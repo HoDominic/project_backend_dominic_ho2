@@ -20,7 +20,7 @@ namespace BookAPI.Controllers
         private IRegistrationService _registrationService;
         public BookController(IRegistrationService registrationService)
         {
-
+            _registrationService = registrationService;
         }
 
 
@@ -42,8 +42,8 @@ namespace BookAPI.Controllers
                 {
                     return await _context.AuthorsDTO.ToListAsync();
                 }
-        */
 
+        */
 
 
         [HttpGet]
@@ -56,17 +56,10 @@ namespace BookAPI.Controllers
 
         [HttpGet]
         [Route("books")]
-        public async Task<ActionResult<List<Book>>> GetBooks(bool includeAuthor = false)
+        public async Task<ActionResult<List<Book>>> GetBooks(string title = "", bool includeAuthor = false)
         {
 
-            try
-            {
-                return await _registrationService.GetBooks(includeAuthor);
-            }
-            catch (Exception ex)
-            {
-                return new StatusCodeResult(500);
-            }
+            return await _registrationService.GetBooks(includeAuthor);
 
         }
 
@@ -82,7 +75,6 @@ namespace BookAPI.Controllers
             try
             {
                 return await _registrationService.AddBook(book);
-
             }
             catch (Exception ex)
             {
@@ -97,6 +89,7 @@ namespace BookAPI.Controllers
         {
             try
             {
+
                 return await _registrationService.DeleteBook(book);
 
             }
