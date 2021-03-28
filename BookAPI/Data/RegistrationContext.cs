@@ -1,4 +1,6 @@
 using System;
+using System.Threading;
+using System.Threading.Tasks;
 using BookAPI.Configuration;
 using BookAPI.DTO;
 using BookAPI.Models;
@@ -7,7 +9,19 @@ using Microsoft.Extensions.Options;
 
 namespace BookAPI.Data
 {
-    public class RegistrationContext : DbContext
+    public interface IRegistrationContext
+    {
+        DbSet<Author> Authors { get; set; }
+        DbSet<AuthorDTO> AuthorsDTO { get; set; }
+        DbSet<Book> Books { get; set; }
+        DbSet<BookGenre> BookGenres { get; set; }
+
+
+        Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
+
+    }
+
+    public class RegistrationContext : DbContext, IRegistrationContext
     {
         public DbSet<Author> Authors { get; set; }
 

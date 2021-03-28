@@ -35,6 +35,13 @@ namespace BookAPI
             services.AddDbContext<RegistrationContext>();
 
             services.AddControllers();
+
+            services.AddTransient<IRegistrationContext, RegistrationContext>();
+
+
+
+
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "BookAPI", Version = "v1" });
