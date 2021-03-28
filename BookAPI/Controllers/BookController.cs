@@ -17,10 +17,10 @@ namespace BookAPI.Controllers
     public class BookController : ControllerBase
     {
 
-        private IRegistrationService _registrationservice;
-        public BookController(IRegistrationService registrationservice)
+        private IRegistrationService _registrationService;
+        public BookController(IRegistrationService registrationService)
         {
-            _registrationservice = registrationservice;
+
         }
 
 
@@ -31,7 +31,7 @@ namespace BookAPI.Controllers
 
         public async Task<List<Author>> GetAuthors()
         {
-            return await _registrationservice.GetAuthors();
+            return await _registrationService.GetAuthors();
         }
 
         //version 2
@@ -41,8 +41,8 @@ namespace BookAPI.Controllers
                 public async Task<List<AuthorDTO>> GetAuthorsDTO()
                 {
                     return await _context.AuthorsDTO.ToListAsync();
-                }*/
-
+                }
+        */
 
 
 
@@ -50,19 +50,18 @@ namespace BookAPI.Controllers
         [Route("genres")]
         public async Task<List<BookGenre>> GetGenres()
         {
-            return await _registrationservice.GetGenres();
+            return await _registrationService.GetGenres();
         }
 
 
         [HttpGet]
         [Route("books")]
-
         public async Task<ActionResult<List<Book>>> GetBooks(bool includeAuthor = false)
         {
 
             try
             {
-                return await _registrationservice.GetBooks(includeAuthor);
+                return await _registrationService.GetBooks(includeAuthor);
             }
             catch (Exception ex)
             {
@@ -75,7 +74,6 @@ namespace BookAPI.Controllers
 
 
 
-
         [HttpPost]
         [Route("book")]
 
@@ -83,8 +81,8 @@ namespace BookAPI.Controllers
         {
             try
             {
-                await _registrationservice.AddBook(book);
-                return book;
+                return await _registrationService.AddBook(book);
+
             }
             catch (Exception ex)
             {
@@ -99,8 +97,7 @@ namespace BookAPI.Controllers
         {
             try
             {
-                await _registrationservice.DeleteBook(book);
-                return book;
+                return await _registrationService.DeleteBook(book);
 
             }
             catch (Exception ex)
@@ -132,8 +129,8 @@ namespace BookAPI.Controllers
         //         return new OkObjectResult(book);
         //     }
         // }
+
+
     }
 
 }
-
-

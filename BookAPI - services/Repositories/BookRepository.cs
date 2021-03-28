@@ -11,7 +11,7 @@ namespace BookAPI.Repositories
     public interface IBookRepository
     {
         Task<Book> AddBook(Book book);
-        Task<ActionResult<Book>> DeleteBook(Book book);
+        Task<Book> DeleteBook(Book book);
         Task<List<Book>> GetBooks(bool includeAuthor);
     }
 
@@ -48,7 +48,7 @@ namespace BookAPI.Repositories
         }
 
 
-        public async Task<ActionResult<Book>> DeleteBook(Book book)
+        public async Task<Book> DeleteBook(Book book)
         {
             _context.Books.Remove(book);
             await _context.SaveChangesAsync();

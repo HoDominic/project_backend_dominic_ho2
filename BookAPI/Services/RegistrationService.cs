@@ -46,6 +46,7 @@ namespace BookAPI.Services
             return await _authorRepository.GetAuthors();
         }
 
+
         public async Task<List<BookGenre>> GetGenres()
         {
             return await _bookGenreRepository.GetGenres();
@@ -62,11 +63,10 @@ namespace BookAPI.Services
             return await _bookRepository.AddBook(book);
         }
 
+
         public async Task<Book> DeleteBook(Book book)
         {
-            return await _bookRepository.AddBook(book);
+            return await _bookRepository.DeleteBook(book);
         }
-
-
     }
 }
