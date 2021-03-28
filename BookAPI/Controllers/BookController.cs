@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BookAPI.Data;
+using BookAPI.DTO;
 using BookAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -31,6 +32,16 @@ namespace BookAPI.Controllers
         {
             return await _context.Authors.ToListAsync();
         }
+
+        //version 2
+        [HttpGet]
+        [Route("authorsdto")]
+
+        public async Task<List<AuthorDTO>> GetAuthorsDTO()
+        {
+            return await _context.AuthorsDTO.ToListAsync();
+        }
+
 
 
 

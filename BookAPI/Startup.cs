@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using BookAPI.Configuration;
 using BookAPI.Data;
 using BookAPI.Repositories;
+using BookAPI.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -42,6 +43,14 @@ namespace BookAPI
             services.AddTransient<IAuthorRepository, AuthorRepository>();
 
             services.AddTransient<IBookGenreRepository, BookGenreRepository>();
+
+            services.AddTransient<IBookRepository, BookRepository>();
+
+            services.AddTransient<IRegistrationService, RegistrationService>();
+
+
+
+
 
 
 
