@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using BookAPI.Data;
 using BookAPI.DTO;
 using BookAPI.Models;
+using BookAPI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,10 +17,10 @@ namespace BookAPI.Controllers
     public class BookController : ControllerBase
     {
 
-        private RegistrationContext _context;
-        public BookController(RegistrationContext context)
+        private IRegistrationService _registrationservice;
+        public BookController(IRegistrationService registrationservice)
         {
-            _context = context;
+            _registrationservice = registrationservice;
         }
 
 
@@ -30,17 +31,17 @@ namespace BookAPI.Controllers
 
         public async Task<List<Author>> GetAuthors()
         {
-            return await _context.Authors.ToListAsync();
+            return await _registrationservice.GetAuthors();
         }
 
         //version 2
         [HttpGet]
         [Route("authorsdto")]
-
-        public async Task<List<AuthorDTO>> GetAuthorsDTO()
-        {
-            return await _context.AuthorsDTO.ToListAsync();
-        }
+        /*
+                public async Task<List<AuthorDTO>> GetAuthorsDTO()
+                {
+                    return await _context.AuthorsDTO.ToListAsync();
+                }*/
 
 
 
@@ -49,41 +50,19 @@ namespace BookAPI.Controllers
         [Route("genres")]
         public async Task<List<BookGenre>> GetGenres()
         {
-            return await _context.BookGenres.ToListAsync();
+            return await _registrationservice.GetGenres();
         }
 
 
         [HttpGet]
         [Route("books")]
-        public async Task<ActionResult<List<Book>>> GetBooks(string title = "", bool includeAuthor = false)
+
+        public async Task<ActionResult<List<Book>>> GetBooks(bool includeAuthor = false)
         {
 
             try
             {
-                if (!string.IsNullOrEmpty(title))
-                {
-                    if (includeAuthor)
-                    {
-
-                        return await _context.Books.Include(r => r.Author).Where(r => r.Title == title).ToListAsync();
-                    }
-                    else
-                    {
-                        return await _context.Books.Where(r => r.Title == title).ToListAsync();
-                    }
-
-                }
-                else
-                {
-                    if (includeAuthor)
-                    {
-                        return await _context.Books.ToListAsync();
-                    }
-                    else
-                    {
-                        return await _context.Books.ToListAsync();
-                    }
-                }
+                return await _registrationservice.GetBooks(includeAuthor);
             }
             catch (Exception ex)
             {
@@ -96,6 +75,7 @@ namespace BookAPI.Controllers
 
 
 
+
         [HttpPost]
         [Route("book")]
 
@@ -103,8 +83,7 @@ namespace BookAPI.Controllers
         {
             try
             {
-                await _context.Books.AddAsync(book);
-                await _context.SaveChangesAsync();
+                await _registrationservice.AddBook(book);
                 return book;
             }
             catch (Exception ex)
@@ -120,10 +99,7 @@ namespace BookAPI.Controllers
         {
             try
             {
-
-                _context.Books.Remove(book);
-                await _context.SaveChangesAsync();
-
+                await _registrationservice.DeleteBook(book);
                 return book;
 
             }
@@ -156,8 +132,8 @@ namespace BookAPI.Controllers
         //         return new OkObjectResult(book);
         //     }
         // }
-
-
     }
 
 }
+
+
