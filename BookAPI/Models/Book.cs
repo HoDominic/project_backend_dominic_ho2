@@ -23,5 +23,8 @@ namespace BookAPI.Models
 
         [Required]
         public Guid BookGenreId { get; set; }
+
+
+
     }
 }
