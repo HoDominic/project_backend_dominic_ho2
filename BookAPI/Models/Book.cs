@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace BookAPI.Models
@@ -23,6 +24,8 @@ namespace BookAPI.Models
 
         [Required]
         public Guid BookGenreId { get; set; }
+
+        public List<BookSupplier> BookSuppliers { get; set; }
 
 
 
