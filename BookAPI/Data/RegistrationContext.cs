@@ -31,6 +31,10 @@ namespace BookAPI.Data
         public DbSet<Book> Books { get; set; }
         public DbSet<BookGenre> BookGenres { get; set; }
 
+        public DbSet<Supplier> Suppliers { get; set; }
+
+        public DbSet<BookSupplier> BookSuppliers { get; set; }
+
 
         private ConnectionStrings _connectionStrings;
 
@@ -72,6 +76,32 @@ namespace BookAPI.Data
             modelBuilder.Entity<AuthorDTO>().HasData(new AuthorDTO() { AuthorId = Guid.NewGuid(), Name = "Hope Jahren", });
             modelBuilder.Entity<AuthorDTO>().HasData(new AuthorDTO() { AuthorId = Guid.NewGuid(), Name = "Matt Haig", });
             modelBuilder.Entity<AuthorDTO>().HasData(new AuthorDTO() { AuthorId = Guid.NewGuid(), Name = "Lucy Foley", });
+
+
+
+            modelBuilder.Entity<BookSupplier>()
+                  .HasKey(cs => new { cs.BookId, cs.SupplierId });
+
+
+
+            modelBuilder.Entity<Supplier>().HasData(new Supplier()
+            {
+                SupplierId = 1,
+                Name = "Standaard Boekhandel"
+            });
+
+
+            modelBuilder.Entity<Supplier>().HasData(new Supplier()
+            {
+                SupplierId = 2,
+                Name = "De Boekuil "
+            });
+
+            modelBuilder.Entity<Supplier>().HasData(new Supplier()
+            {
+                SupplierId = 3,
+                Name = "Athena "
+            });
 
 
         }

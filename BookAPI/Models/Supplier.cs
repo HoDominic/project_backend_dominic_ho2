@@ -9,6 +9,6 @@ namespace BookAPI.Models
 
         public string Name { get; set; }
 
-        public List<Book> BookSuppliers { get; set; }
+        public List<BookSupplier> BookSuppliers { get; set; }
     }
 }

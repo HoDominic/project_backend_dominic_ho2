@@ -7,7 +7,10 @@ namespace BookAPI.Models
     {
         public Guid BookId { get; set; }
 
+        public Book Book { get; set; }
+
         public int SupplierId { get; set; }
+
 
         public Supplier Supplier { get; set; }
     }
