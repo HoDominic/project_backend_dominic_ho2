@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using BookAPI.Configuration;
 using BookAPI.Data;
@@ -61,6 +63,12 @@ namespace BookAPI
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "BookAPI", Version = "v1" });
+
+                //Met XML Swagger bewerken
+                var xmlCommentsFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlCommentsFullPath = Path.Combine(AppContext.BaseDirectory, xmlCommentsFile);
+
+                c.IncludeXmlComments(xmlCommentsFullPath);
             });
         }
 
@@ -74,7 +82,7 @@ namespace BookAPI
                 app.UseSwaggerUI(c =>
                     {// swagger naar Route verplaatsen (localhost:5000/index.html)
                         c.SwaggerEndpoint("/swagger/v1/swagger.json", "BookAPI v1");
-                        c.RoutePrefix = "";
+                        //  c.RoutePrefix = "";
                     });
 
             }
