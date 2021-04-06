@@ -4,6 +4,10 @@ using System.Text.Json.Serialization;
 
 namespace BookAPI.Models
 {
+
+    /// <summary>
+    /// A supplier with SupplierId,  Name field . 
+    /// </summary>
     public class Supplier
     {
         public int SupplierId { get; set; }

@@ -2,6 +2,12 @@ using System;
 
 namespace BookAPI.Models
 {
+
+    /// <summary>
+    /// An author with AuthorId, Name, Age and Country field.
+    /// </summary>
+
+
     public class Author
     {
         public Guid AuthorId { get; set; }

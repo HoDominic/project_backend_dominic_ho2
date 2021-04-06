@@ -7,6 +7,9 @@ namespace BookAPI.Models
 {
     public class Book
     {
+        /// <summary>
+        /// A book with BookId, Title, Description, Year, AuthorId, BookGenreId . 
+        /// </summary>
         public Guid BookId { get; set; }
 
         [Required]
