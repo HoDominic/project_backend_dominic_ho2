@@ -71,7 +71,11 @@ namespace BookAPI
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "BookAPI v1"));
+                app.UseSwaggerUI(c =>
+               {// swagger naar Route verplaatsen (localhost:5000/index.html)
+                        c.SwaggerEndpoint("/swagger/v1/swagger.json", "BookAPI v1");
+                        //  c.RoutePrefix = "";
+                    });
             }
 
             app.UseHttpsRedirection();
