@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<doc>
-    <assembly>
-        <name>BookAPI</name>
-    </assembly>
-    <members>
-        <!-- Badly formed XML comment ignored for member "M:BookAPI.Controllers.BookController.GetGenres" -->
-    </members>
-</doc>

@@ -1,19 +1,13 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
 namespace BookAPI.Models
 {
-
-    /// <summary>
-    /// A supplier with SupplierId,  Name field . 
-    /// </summary>
     public class Supplier
     {
         public int SupplierId { get; set; }
 
-        [MaxLength(150)]
         public string Name { get; set; }
 
 

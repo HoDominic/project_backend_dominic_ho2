@@ -23,21 +23,8 @@ namespace BookAPI.Controllers
             _registrationService = registrationService;
         }
 
-        //SWAGGER COMMENTS
-        /// <summary>
-        /// Get Authors
-        /// </summary>
-        /// <remarks>
-        /// Sample request (this request gets all authors' information)\
-        ///[ \
-        ///   { \
-        ///     "authorId": "3fa85f64-5717-4562-b3fc-2c963f66afa6", \
-        ///     "name": "Matthew Walker", \
-        ///    "age": 48, \
-        ///     "country": "United Kingdom" \
-        ///   } \
-        /// ] 
-        ///</remarks>
+
+
 
         [HttpGet]
         [Route("authors")]
@@ -48,8 +35,8 @@ namespace BookAPI.Controllers
         }
 
         //version 2
-        // [HttpGet]
-        // [Route("authorsdto")]
+        [HttpGet]
+        [Route("authorsdto")]
         /*
                 public async Task<List<AuthorDTO>> GetAuthorsDTO()
                 {
@@ -58,10 +45,6 @@ namespace BookAPI.Controllers
 
         */
 
-
-        /// <summary>
-        /// Get Genres
-        /// </summary>
 
         [HttpGet]
         [Route("genres")]
@@ -80,9 +63,7 @@ namespace BookAPI.Controllers
         //     return await _registrationService.GetGenres();
         // }
 
-        /// <summary>
-        /// Get Suppliers
-        /// </summary>
+
 
         [HttpGet]
         [Route("suppliers")]
@@ -99,11 +80,6 @@ namespace BookAPI.Controllers
         }
 
 
-
-        /// <summary>
-        /// Get Books
-        /// </summary>
-
         [HttpGet]
         [Route("books")]
         public async Task<ActionResult<List<Book>>> GetBooks(string title = "", bool includeAuthor = false)
@@ -115,9 +91,7 @@ namespace BookAPI.Controllers
 
 
 
-        /// <summary>
-        /// Insert a Book
-        /// </summary>
+
 
         [HttpPost]
         [Route("book")]
@@ -133,11 +107,6 @@ namespace BookAPI.Controllers
                 return new StatusCodeResult(500);
             }
         }
-
-
-        /// <summary>
-        /// Delete a Book
-        /// </summary>
 
         [HttpDelete]
         [Route("book")]

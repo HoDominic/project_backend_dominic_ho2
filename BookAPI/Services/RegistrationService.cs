@@ -38,6 +38,7 @@ namespace BookAPI.Services
         )
         {
             _authorRepository = authorRepository;
+            //_authorDTORepository = authorDTORepository;
 
             _bookGenreRepository = bookGenreRepository;
             _bookRepository = bookRepository;

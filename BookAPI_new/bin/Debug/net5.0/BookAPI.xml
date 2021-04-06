@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BookAPI</name>
+    </assembly>
+    <members>
+        <member name="M:BookAPI.Controllers.BookController.GetAuthors">
+             <summary>
+             Get Authors
+             </summary>
+             <remarks>
+             Sample request (this request gets all authors' information)\
+            [ \
+               { \
+                 "authorId": "3fa85f64-5717-4562-b3fc-2c963f66afa6", \
+                 "name": "Matthew Walker", \
+                "age": 48, \
+                 "country": "United Kingdom" \
+               } \
+             ] 
+            </remarks>
+        </member>
+        <member name="M:BookAPI.Controllers.BookController.GetGenres">
+            <summary>
+            Get Genres
+            </summary>
+        </member>
+        <member name="M:BookAPI.Controllers.BookController.GetSuppliers">
+            <summary>
+            Get Suppliers
+            </summary>
+        </member>
+        <member name="M:BookAPI.Controllers.BookController.GetBooks(System.String,System.Boolean)">
+            <summary>
+            Get Books
+            </summary>
+        </member>
+        <member name="M:BookAPI.Controllers.BookController.AddBook(BookAPI.Models.Book)">
+            <summary>
+            Insert a Book
+            </summary>
+        </member>
+        <member name="M:BookAPI.Controllers.BookController.DeleteBook(BookAPI.Models.Book)">
+            <summary>
+            Delete a Book
+            </summary>
+        </member>
+        <member name="T:BookAPI.Models.Author">
+            <summary>
+            An author with AuthorId, Name, Age and Country field.
+            </summary>
+        </member>
+        <member name="P:BookAPI.Models.Book.BookId">
+            <summary>
+            A book with BookId, Title, Description, Year, AuthorId, BookGenreId . 
+            </summary>
+        </member>
+        <member name="T:BookAPI.Models.BookGenre">
+            <summary>
+            A bookgenre with BookGenreId and Genre field. 
+            </summary>
+        </member>
+        <member name="T:BookAPI.Models.Supplier">
+            <summary>
+            A supplier with SupplierId,  Name field . 
+            </summary>
+        </member>
+    </members>
+</doc>
