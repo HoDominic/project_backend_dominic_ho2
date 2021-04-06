@@ -62,7 +62,21 @@ namespace BookAPI
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "BookAPI", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "BookAPI",
+                    Version = "v1",
+                    Description = "Through this API you can access authors and their books.",
+                    Contact = new Microsoft.OpenApi.Models.OpenApiContact()
+                    {
+                        Email = "dominic.ho@student.howest.be",
+                        Name = "Dominic Ho"
+                    },
+                    License = new Microsoft.OpenApi.Models.OpenApiLicense()
+                    {
+                        Url = new Uri("https://opensource.org/licenses/MIT")
+                    }
+                });
 
                 //Met XML Swagger bewerken
                 var xmlCommentsFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";

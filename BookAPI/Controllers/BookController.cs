@@ -36,7 +36,7 @@ namespace BookAPI.Controllers
         ///    "age": 48, \
         ///     "country": "United Kingdom" \
         ///   } \
-        /// ] \
+        /// ] 
         ///</remarks>
 
         [HttpGet]
