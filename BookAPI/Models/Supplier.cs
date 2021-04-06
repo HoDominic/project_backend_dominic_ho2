@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace BookAPI.Models
 {
@@ -9,6 +10,8 @@ namespace BookAPI.Models
 
         public string Name { get; set; }
 
+
+        [JsonIgnore]
         public List<BookSupplier> BookSuppliers { get; set; }
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace BookAPI.Models
 {
@@ -25,6 +26,7 @@ namespace BookAPI.Models
         [Required]
         public Guid BookGenreId { get; set; }
 
+        [JsonIgnore]
         public List<BookSupplier> BookSuppliers { get; set; }
 
 
