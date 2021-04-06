@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace BookAPI.Models
 {
@@ -10,6 +11,8 @@ namespace BookAPI.Models
     {
         public Guid BookGenreId { get; set; }
 
+
+        [MaxLength(150)]
         public string Genre { get; set; }
     }
 }

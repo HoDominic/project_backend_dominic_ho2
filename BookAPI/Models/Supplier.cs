@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
 namespace BookAPI.Models
@@ -12,6 +13,7 @@ namespace BookAPI.Models
     {
         public int SupplierId { get; set; }
 
+        [MaxLength(150)]
         public string Name { get; set; }
 
 

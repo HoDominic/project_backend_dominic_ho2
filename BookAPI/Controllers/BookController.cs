@@ -27,6 +27,17 @@ namespace BookAPI.Controllers
         /// <summary>
         /// Get Authors
         /// </summary>
+        /// <remarks>
+        /// Sample request (this request gets all authors' information)\
+        ///[ \
+        ///   { \
+        ///     "authorId": "3fa85f64-5717-4562-b3fc-2c963f66afa6", \
+        ///     "name": "Matthew Walker", \
+        ///    "age": 48, \
+        ///     "country": "United Kingdom" \
+        ///   } \
+        /// ] \
+        ///</remarks>
 
         [HttpGet]
         [Route("authors")]
