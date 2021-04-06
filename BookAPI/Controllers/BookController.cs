@@ -35,8 +35,8 @@ namespace BookAPI.Controllers
         }
 
         //version 2
-        [HttpGet]
-        [Route("authorsdto")]
+        // [HttpGet]
+        // [Route("authorsdto")]
         /*
                 public async Task<List<AuthorDTO>> GetAuthorsDTO()
                 {
