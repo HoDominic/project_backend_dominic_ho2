@@ -13,6 +13,9 @@ namespace BookAPI.Services
         Task<List<Author>> GetAuthors();
         Task<List<Book>> GetBooks(bool includeAuthor);
         Task<List<BookGenre>> GetGenres();
+
+        Task<List<Supplier>> GetSuppliers();
+
     }
 
     public class RegistrationService : IRegistrationService
@@ -24,11 +27,14 @@ namespace BookAPI.Services
         private IBookGenreRepository _bookGenreRepository;
         private IBookRepository _bookRepository;
 
+        private ISupplierRepository _supplierRepository;
+
         public RegistrationService(
         IAuthorRepository authorRepository,
         //IAuthorDTORepository authorDTORepository,
         IBookGenreRepository bookGenreRepository,
-        IBookRepository bookRepository
+        IBookRepository bookRepository,
+        ISupplierRepository supplierRepository
         )
         {
             _authorRepository = authorRepository;
@@ -36,6 +42,7 @@ namespace BookAPI.Services
 
             _bookGenreRepository = bookGenreRepository;
             _bookRepository = bookRepository;
+            _supplierRepository = supplierRepository;
 
         }
 
@@ -49,6 +56,11 @@ namespace BookAPI.Services
         public async Task<List<BookGenre>> GetGenres()
         {
             return await _bookGenreRepository.GetGenres();
+        }
+
+        public async Task<List<Supplier>> GetSuppliers()
+        {
+            return await _supplierRepository.GetSuppliers();
         }
 
 

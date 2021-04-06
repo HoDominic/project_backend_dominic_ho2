@@ -46,6 +46,8 @@ namespace BookAPI
 
             services.AddTransient<IBookRepository, BookRepository>();
 
+            services.AddTransient<ISupplierRepository, SupplierRepository>();
+
             services.AddTransient<IRegistrationService, RegistrationService>();
 
 

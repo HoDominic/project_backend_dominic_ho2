@@ -48,9 +48,35 @@ namespace BookAPI.Controllers
 
         [HttpGet]
         [Route("genres")]
-        public async Task<List<BookGenre>> GetGenres()
+        public async Task<ActionResult<List<BookGenre>>> GetGenres()
         {
-            return await _registrationService.GetGenres();
+            try
+            {
+                return new OkObjectResult(await _registrationService.GetGenres());
+            }
+            catch (Exception ex)
+            {
+                return new StatusCodeResult(500);
+            }
+        }
+        // {
+        //     return await _registrationService.GetGenres();
+        // }
+
+
+
+        [HttpGet]
+        [Route("suppliers")]
+        public async Task<ActionResult<List<Supplier>>> GetSuppliers()
+        {
+            try
+            {
+                return new OkObjectResult(await _registrationService.GetSuppliers());
+            }
+            catch (Exception ex)
+            {
+                return new StatusCodeResult(500);
+            }
         }
 
 

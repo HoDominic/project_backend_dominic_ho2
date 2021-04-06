@@ -12,9 +12,10 @@ namespace BookAPI.Data
     public interface IRegistrationContext
     {
         DbSet<Author> Authors { get; set; }
-        DbSet<AuthorDTO> AuthorsDTO { get; set; }
+
         DbSet<Book> Books { get; set; }
         DbSet<BookGenre> BookGenres { get; set; }
+        DbSet<Supplier> Suppliers { get; set; }
 
 
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
@@ -25,8 +26,7 @@ namespace BookAPI.Data
     {
         public DbSet<Author> Authors { get; set; }
 
-        //version2 
-        public DbSet<AuthorDTO> AuthorsDTO { get; set; }
+
 
         public DbSet<Book> Books { get; set; }
         public DbSet<BookGenre> BookGenres { get; set; }
@@ -70,12 +70,6 @@ namespace BookAPI.Data
             modelBuilder.Entity<BookGenre>().HasData(new BookGenre() { BookGenreId = Guid.NewGuid(), Genre = "Romance" });
             modelBuilder.Entity<BookGenre>().HasData(new BookGenre() { BookGenreId = Guid.NewGuid(), Genre = "Horror" });
 
-
-            modelBuilder.Entity<AuthorDTO>().HasData(new AuthorDTO() { AuthorId = Guid.NewGuid(), Name = "Bill Gates", });
-            modelBuilder.Entity<AuthorDTO>().HasData(new AuthorDTO() { AuthorId = Guid.NewGuid(), Name = "Matthew Walker", });
-            modelBuilder.Entity<AuthorDTO>().HasData(new AuthorDTO() { AuthorId = Guid.NewGuid(), Name = "Hope Jahren", });
-            modelBuilder.Entity<AuthorDTO>().HasData(new AuthorDTO() { AuthorId = Guid.NewGuid(), Name = "Matt Haig", });
-            modelBuilder.Entity<AuthorDTO>().HasData(new AuthorDTO() { AuthorId = Guid.NewGuid(), Name = "Lucy Foley", });
 
 
 
