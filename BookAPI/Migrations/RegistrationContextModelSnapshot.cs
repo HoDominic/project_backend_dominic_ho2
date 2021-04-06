@@ -19,47 +19,6 @@ namespace BookAPI.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.3");
 
-            modelBuilder.Entity("BookAPI.DTO.AuthorDTO", b =>
-                {
-                    b.Property<Guid>("AuthorId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("AuthorId");
-
-                    b.ToTable("AuthorsDTO");
-
-                    b.HasData(
-                        new
-                        {
-                            AuthorId = new Guid("4f281332-a9c8-4ff7-9c30-656d9fe1bd94"),
-                            Name = "Bill Gates"
-                        },
-                        new
-                        {
-                            AuthorId = new Guid("2df269e3-9af9-45d3-a1ef-577dd68e0862"),
-                            Name = "Matthew Walker"
-                        },
-                        new
-                        {
-                            AuthorId = new Guid("1c667928-d1c6-4bff-bd1d-24b2cb787f0f"),
-                            Name = "Hope Jahren"
-                        },
-                        new
-                        {
-                            AuthorId = new Guid("e63b3611-c380-445c-bb16-db18c1b2c437"),
-                            Name = "Matt Haig"
-                        },
-                        new
-                        {
-                            AuthorId = new Guid("c8140706-efb9-4727-bb3e-b9b4e4448345"),
-                            Name = "Lucy Foley"
-                        });
-                });
-
             modelBuilder.Entity("BookAPI.Models.Author", b =>
                 {
                     b.Property<Guid>("AuthorId")
@@ -82,35 +41,35 @@ namespace BookAPI.Migrations
                     b.HasData(
                         new
                         {
-                            AuthorId = new Guid("dd29c07c-3fe6-4c39-8a45-e6a8f339f49b"),
+                            AuthorId = new Guid("d9d2abc9-c06c-4d51-a247-bce5a4128d7f"),
                             Age = 65,
                             Country = "Unites States",
                             Name = "Bill Gates"
                         },
                         new
                         {
-                            AuthorId = new Guid("70fd1fce-e1b8-4893-87ea-0c21a1892cd8"),
+                            AuthorId = new Guid("75805ed7-d5a1-40b8-b876-36c9e2b7ac5f"),
                             Age = 48,
                             Country = "United Kingdom",
                             Name = "Matthew Walker"
                         },
                         new
                         {
-                            AuthorId = new Guid("e274833e-192e-4a10-b1d4-ad2e0b9a8cd7"),
+                            AuthorId = new Guid("2edb85ed-bc62-4d43-b17f-13bb77878ba0"),
                             Age = 51,
                             Country = "Unites States",
                             Name = "Hope Jahren"
                         },
                         new
                         {
-                            AuthorId = new Guid("f4fffbbd-5480-4ada-9c16-e231c4542bb0"),
+                            AuthorId = new Guid("53b4bf5a-6c91-447c-82b2-c06efb5f1529"),
                             Age = 45,
                             Country = "United Kingdom",
                             Name = "Matt Haig"
                         },
                         new
                         {
-                            AuthorId = new Guid("a5d4bb59-faa9-477d-99f1-2273118d3313"),
+                            AuthorId = new Guid("1d53f5a5-3092-4eda-86d6-91d501b8b3fe"),
                             Age = 35,
                             Country = "United Kingdom",
                             Name = "Lucy Foley"
@@ -163,48 +122,95 @@ namespace BookAPI.Migrations
                     b.HasData(
                         new
                         {
-                            BookGenreId = new Guid("5145e3c2-8ec6-4677-827b-e8b1e16a1e98"),
+                            BookGenreId = new Guid("c44022d1-629a-4a64-b05a-9ca7cdadabf4"),
                             Genre = "Fiction"
                         },
                         new
                         {
-                            BookGenreId = new Guid("61d89ad1-ced9-4c73-9342-0ed2b143448d"),
+                            BookGenreId = new Guid("c0e2fd71-64f8-4480-a6e8-8349d50a99be"),
                             Genre = "Mystery & Thriller"
                         },
                         new
                         {
-                            BookGenreId = new Guid("2480bc1e-43ae-4667-97da-ec69791425ac"),
+                            BookGenreId = new Guid("a21da655-a425-4837-a82f-392498240d8b"),
                             Genre = "Nonfiction"
                         },
                         new
                         {
-                            BookGenreId = new Guid("c8696366-2e19-4efc-bbc3-180be7551713"),
+                            BookGenreId = new Guid("a94d7b38-f321-4d06-a174-c7b8cc0c3c71"),
                             Genre = "Science & Technology"
                         },
                         new
                         {
-                            BookGenreId = new Guid("9a415047-48f7-453f-b957-fac93db79332"),
+                            BookGenreId = new Guid("d3cc3e0b-6105-4c7c-aadd-ed68428aec12"),
                             Genre = "Historical Fiction"
                         },
                         new
                         {
-                            BookGenreId = new Guid("7c60b696-8f4c-426d-9cb1-701744d91806"),
+                            BookGenreId = new Guid("d4810793-ca51-4f90-b4df-39e0d5411fdc"),
                             Genre = "Science & Technology"
                         },
                         new
                         {
-                            BookGenreId = new Guid("dcc4fe79-1341-4243-b2ee-210d0df5d17e"),
+                            BookGenreId = new Guid("b50b2d94-5fa3-42e4-8689-287faae9b0c4"),
                             Genre = "Fantasy"
                         },
                         new
                         {
-                            BookGenreId = new Guid("90e2995b-2e46-4bb3-b9eb-d15996acc913"),
+                            BookGenreId = new Guid("db55ddaa-c127-40b2-a6fc-9e4ef3825376"),
                             Genre = "Romance"
                         },
                         new
                         {
-                            BookGenreId = new Guid("fa25d4a9-cb63-456c-9d0f-03d0f488dfd6"),
+                            BookGenreId = new Guid("80c5eefe-47cc-4704-9e94-24c6cc1905cc"),
                             Genre = "Horror"
+                        });
+                });
+
+            modelBuilder.Entity("BookAPI.Models.BookSupplier", b =>
+                {
+                    b.Property<Guid>("BookId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("SupplierId")
+                        .HasColumnType("int");
+
+                    b.HasKey("BookId", "SupplierId");
+
+                    b.HasIndex("SupplierId");
+
+                    b.ToTable("BookSuppliers");
+                });
+
+            modelBuilder.Entity("BookAPI.Models.Supplier", b =>
+                {
+                    b.Property<int>("SupplierId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("SupplierId");
+
+                    b.ToTable("Suppliers");
+
+                    b.HasData(
+                        new
+                        {
+                            SupplierId = 1,
+                            Name = "Standaard Boekhandel"
+                        },
+                        new
+                        {
+                            SupplierId = 2,
+                            Name = "De Boekuil "
+                        },
+                        new
+                        {
+                            SupplierId = 3,
+                            Name = "Athena "
                         });
                 });
 
@@ -217,6 +223,35 @@ namespace BookAPI.Migrations
                         .IsRequired();
 
                     b.Navigation("Author");
+                });
+
+            modelBuilder.Entity("BookAPI.Models.BookSupplier", b =>
+                {
+                    b.HasOne("BookAPI.Models.Book", "Book")
+                        .WithMany("BookSuppliers")
+                        .HasForeignKey("BookId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BookAPI.Models.Supplier", "Supplier")
+                        .WithMany("BookSuppliers")
+                        .HasForeignKey("SupplierId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Book");
+
+                    b.Navigation("Supplier");
+                });
+
+            modelBuilder.Entity("BookAPI.Models.Book", b =>
+                {
+                    b.Navigation("BookSuppliers");
+                });
+
+            modelBuilder.Entity("BookAPI.Models.Supplier", b =>
+                {
+                    b.Navigation("BookSuppliers");
                 });
 #pragma warning restore 612, 618
         }
