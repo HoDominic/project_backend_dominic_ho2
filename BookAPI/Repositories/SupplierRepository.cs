@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using BookAPI.Data;
 using BookAPI.Models;
@@ -10,6 +11,7 @@ namespace BookAPI.Repositories
     public interface ISupplierRepository
     {
         Task<List<Supplier>> GetSuppliers();
+        Task<Supplier> GetSupplier(int supplierId);
     }
 
     public class SupplierRepository : ISupplierRepository
@@ -32,6 +34,12 @@ namespace BookAPI.Repositories
 
                 throw ex;
             }
+        }
+
+
+        public async Task<Supplier> GetSupplier(int supplierId)
+        {
+            return await _context.Suppliers.Where(s => s.SupplierId == supplierId).SingleOrDefaultAsync();
         }
 
     }
