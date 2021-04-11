@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
 using BookAPI.JWT;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookAPI.Controllers
 {
 
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class NameController : ControllerBase
@@ -21,7 +23,7 @@ namespace BookAPI.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new string[] { "Dominic", "Howest" };
         }
 
         // GET: api/Name/5
@@ -31,7 +33,7 @@ namespace BookAPI.Controllers
             return "value";
         }
 
-
+        [AllowAnonymous]
         [HttpPost("authenticate")]
         public IActionResult Authenticate([FromBody] UserCred userCred)
         {

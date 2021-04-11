@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 using System.Threading.Tasks;
 using BookAPI.Configuration;
 using BookAPI.Controllers;
@@ -10,6 +11,7 @@ using BookAPI.Data;
 using BookAPI.JWT;
 using BookAPI.Repositories;
 using BookAPI.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -18,6 +20,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 
 namespace BookAPI
@@ -60,14 +63,25 @@ namespace BookAPI
             //authentication
             var key = "this is my test key";
 
+
+            services.AddAuthentication(x =>
+           {
+               x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+               x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+           }).AddJwtBearer(x =>    //JwtBearer decrypteert de key
+           {
+               x.RequireHttpsMetadata = false;
+               x.SaveToken = true;
+               x.TokenValidationParameters = new TokenValidationParameters
+               {
+                   ValidateIssuerSigningKey = true,
+                   IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(key)),
+                   ValidateIssuer = false,
+                   ValidateAudience = false
+               };
+           });
+
             services.AddSingleton<IJwtAuthenticationManager>(new JwtAuthenticationManager(key));
-
-
-
-
-
-
-
 
 
             services.AddSwaggerGen(c =>
