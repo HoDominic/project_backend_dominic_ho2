@@ -104,6 +104,7 @@ namespace BookAPI
 
             app.UseRouting();
 
+            app.UseAuthentication(); // nodig voor JWT
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

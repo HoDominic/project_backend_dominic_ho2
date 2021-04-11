@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using BookAPI.JWT;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookAPI.Controllers
@@ -9,7 +10,11 @@ namespace BookAPI.Controllers
     [Route("api")]
     public class NameController : ControllerBase
     {
-
+        private readonly IJwtAuthenticationManager jwtAuthenticationManager;
+        public NameController(IJwtAuthenticationManager jwtAuthenticationManager)
+        {
+            this.jwtAuthenticationManager = jwtAuthenticationManager;
+        }
 
 
         // GET: api/Name
@@ -24,6 +29,16 @@ namespace BookAPI.Controllers
         public string Get(int id)
         {
             return "value";
+        }
+
+
+        [HttpPost("authenticate")]
+        public IActionResult Authenticate([FromBody] UserCred userCred)
+        {
+            var token = jwtAuthenticationManager.Authenticate(userCred.Username, userCred.Password);
+            if (token == null)
+                return Unauthorized();
+            return Ok(token);
         }
     }
 }
