@@ -7,7 +7,7 @@ namespace BookAPI.Controllers
 {
 
     [ApiController]
-    [Route("api")]
+    [Route("api/[controller]")]
     public class NameController : ControllerBase
     {
         private readonly IJwtAuthenticationManager jwtAuthenticationManager;

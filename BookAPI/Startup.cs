@@ -5,7 +5,9 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using BookAPI.Configuration;
+using BookAPI.Controllers;
 using BookAPI.Data;
+using BookAPI.JWT;
 using BookAPI.Repositories;
 using BookAPI.Services;
 using Microsoft.AspNetCore.Builder;
@@ -40,6 +42,8 @@ namespace BookAPI
 
             services.AddControllers();
 
+
+
             services.AddTransient<IRegistrationContext, RegistrationContext>();
 
             services.AddTransient<IAuthorRepository, AuthorRepository>();
@@ -51,6 +55,12 @@ namespace BookAPI
             services.AddTransient<ISupplierRepository, SupplierRepository>();
 
             services.AddTransient<IRegistrationService, RegistrationService>();
+
+
+            //authentication
+            var key = "this is my test key";
+
+            services.AddSingleton<IJwtAuthenticationManager>(new JwtAuthenticationManager(key));
 
 
 
