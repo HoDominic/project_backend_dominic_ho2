@@ -65,7 +65,7 @@ namespace BookAPI.Data
             modelBuilder.Entity<BookGenre>().HasData(new BookGenre() { BookGenreId = Guid.NewGuid(), Genre = "Nonfiction" });
             modelBuilder.Entity<BookGenre>().HasData(new BookGenre() { BookGenreId = Guid.NewGuid(), Genre = "Science & Technology" });
             modelBuilder.Entity<BookGenre>().HasData(new BookGenre() { BookGenreId = Guid.NewGuid(), Genre = "Historical Fiction" });
-            modelBuilder.Entity<BookGenre>().HasData(new BookGenre() { BookGenreId = Guid.NewGuid(), Genre = "Science & Technology" });
+            modelBuilder.Entity<BookGenre>().HasData(new BookGenre() { BookGenreId = Guid.NewGuid(), Genre = "Sciencefiction" });
             modelBuilder.Entity<BookGenre>().HasData(new BookGenre() { BookGenreId = Guid.NewGuid(), Genre = "Fantasy" });
             modelBuilder.Entity<BookGenre>().HasData(new BookGenre() { BookGenreId = Guid.NewGuid(), Genre = "Romance" });
             modelBuilder.Entity<BookGenre>().HasData(new BookGenre() { BookGenreId = Guid.NewGuid(), Genre = "Horror" });

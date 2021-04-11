@@ -27,7 +27,7 @@ namespace BookAPI.Repositories
         public async Task<List<Book>> GetBooks(bool includeAuthor)
         {
 
-            if (includeAuthor)
+            if (includeAuthor) 
             {
                 return await _context.Books.Include(r => r.Author).ToListAsync();
             }

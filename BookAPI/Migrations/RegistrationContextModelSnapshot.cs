@@ -41,35 +41,35 @@ namespace BookAPI.Migrations
                     b.HasData(
                         new
                         {
-                            AuthorId = new Guid("025ef726-d795-46e8-9924-ada298d2bbcf"),
+                            AuthorId = new Guid("e99b0983-dd40-402b-839f-9a326e3c1b21"),
                             Age = 65,
                             Country = "Unites States",
                             Name = "Bill Gates"
                         },
                         new
                         {
-                            AuthorId = new Guid("1061169b-428b-4530-82d7-3515f20c9faa"),
+                            AuthorId = new Guid("49ede919-829e-4727-8fa0-19515b2c579b"),
                             Age = 48,
                             Country = "United Kingdom",
                             Name = "Matthew Walker"
                         },
                         new
                         {
-                            AuthorId = new Guid("bd930bdd-b64e-4003-ae73-92b3d6f327a2"),
+                            AuthorId = new Guid("8c3bdd93-2fa3-4504-a6aa-6cf1d68a9c33"),
                             Age = 51,
                             Country = "Unites States",
                             Name = "Hope Jahren"
                         },
                         new
                         {
-                            AuthorId = new Guid("48c49527-dfe6-443b-ba39-a253dfd65a57"),
+                            AuthorId = new Guid("7b47c724-dcba-4fe4-91a7-a7ac93437403"),
                             Age = 45,
                             Country = "United Kingdom",
                             Name = "Matt Haig"
                         },
                         new
                         {
-                            AuthorId = new Guid("1223eb86-5325-42b1-b49c-79c27a077c4b"),
+                            AuthorId = new Guid("f15e7a1f-adf9-4fa3-bf60-74f464f3d5c1"),
                             Age = 35,
                             Country = "United Kingdom",
                             Name = "Lucy Foley"
@@ -122,47 +122,47 @@ namespace BookAPI.Migrations
                     b.HasData(
                         new
                         {
-                            BookGenreId = new Guid("e51f509c-c951-4541-94c7-75e7917550d6"),
+                            BookGenreId = new Guid("b62b8b58-7f80-4c59-a43b-2b7d092eee22"),
                             Genre = "Fiction"
                         },
                         new
                         {
-                            BookGenreId = new Guid("d9fd68b1-140d-4e51-ab07-b70dc2fdfd19"),
+                            BookGenreId = new Guid("4ccf13a4-f6ec-4f95-98f8-d52af5b2ba9e"),
                             Genre = "Mystery & Thriller"
                         },
                         new
                         {
-                            BookGenreId = new Guid("9cdaac42-a770-4026-af31-d654e47b65bc"),
+                            BookGenreId = new Guid("ae873c67-0c8f-4bc2-b9fe-d4eb9bc5cb50"),
                             Genre = "Nonfiction"
                         },
                         new
                         {
-                            BookGenreId = new Guid("313ab2ad-854a-493e-91c7-6fa0e68637de"),
+                            BookGenreId = new Guid("926b4dee-788a-4676-826b-c334a1803074"),
                             Genre = "Science & Technology"
                         },
                         new
                         {
-                            BookGenreId = new Guid("43beb2b9-7793-4ca6-a62e-7c7d57e52926"),
+                            BookGenreId = new Guid("a2f4be33-b1bb-4555-b27f-9f180e6e5fe4"),
                             Genre = "Historical Fiction"
                         },
                         new
                         {
-                            BookGenreId = new Guid("0182d2a9-6025-4443-805b-357a47788151"),
+                            BookGenreId = new Guid("dc31a872-3e29-4f25-8f7b-a876a92d20e8"),
                             Genre = "Science & Technology"
                         },
                         new
                         {
-                            BookGenreId = new Guid("6db6e21b-46cd-4a65-baa9-66e9cbb9d9f7"),
+                            BookGenreId = new Guid("dd0c05d9-99ca-4e68-a5cb-a2eceb283095"),
                             Genre = "Fantasy"
                         },
                         new
                         {
-                            BookGenreId = new Guid("d15063fc-ced0-4380-a513-4546ef94ff63"),
+                            BookGenreId = new Guid("6dfe9b50-5c96-4acd-91d7-171c8d657a79"),
                             Genre = "Romance"
                         },
                         new
                         {
-                            BookGenreId = new Guid("d72395ba-8b4e-4084-8fa5-5ad31dce1223"),
+                            BookGenreId = new Guid("a841826b-7375-41f0-9515-2f4ac8b7a7ab"),
                             Genre = "Horror"
                         });
                 });

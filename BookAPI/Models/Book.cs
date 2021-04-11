@@ -27,7 +27,6 @@ namespace BookAPI.Models
         public Guid BookGenreId { get; set; }
 
 
-
         [JsonIgnore]
         public List<BookSupplier> BookSuppliers { get; set; }
 
