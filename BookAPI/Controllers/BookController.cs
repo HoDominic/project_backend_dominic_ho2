@@ -25,6 +25,10 @@ namespace BookAPI.Controllers
 
 
 
+        ///<summary>
+        ///  Get authors
+        ///</summary>
+
 
         [HttpGet]
         [Route("authors")]
@@ -35,8 +39,8 @@ namespace BookAPI.Controllers
         }
 
         //version 2
-        [HttpGet]
-        [Route("authorsdto")]
+        /*[HttpGet]
+        [Route("authorsdto")]*/
         /*
                 public async Task<List<AuthorDTO>> GetAuthorsDTO()
                 {
@@ -46,6 +50,9 @@ namespace BookAPI.Controllers
         */
 
 
+        ///<summary>
+        ///  Get genres
+        ///</summary>
         [HttpGet]
         [Route("genres")]
         public async Task<ActionResult<List<BookGenre>>> GetGenres()
@@ -64,7 +71,9 @@ namespace BookAPI.Controllers
         // }
 
 
-
+        ///<summary>
+        ///  Get suppliers
+        ///</summary>
         [HttpGet]
         [Route("suppliers")]
         public async Task<ActionResult<List<Supplier>>> GetSuppliers()
@@ -79,6 +88,9 @@ namespace BookAPI.Controllers
             }
         }
 
+        ///<summary>
+        ///  Get books
+        ///</summary>
 
         [HttpGet]
         [Route("books")]
@@ -91,7 +103,9 @@ namespace BookAPI.Controllers
 
 
 
-
+        ///<summary>
+        ///  Posta book
+        ///</summary>
 
         [HttpPost]
         [Route("book")]
@@ -107,6 +121,12 @@ namespace BookAPI.Controllers
                 return new StatusCodeResult(500);
             }
         }
+
+
+
+        ///<summary>
+        ///  Delete a book
+        ///</summary>
 
         [HttpDelete]
         [Route("book")]

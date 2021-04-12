@@ -5,6 +5,9 @@ using System.Text.Json.Serialization;
 
 namespace BookAPI.Models
 {
+    ///<summary>
+    ///   Book with BookId ,Title, Description, Year,AuthorId,BookGenreId 
+    ///</summary>
     public class Book
     {
         public Guid BookId { get; set; }

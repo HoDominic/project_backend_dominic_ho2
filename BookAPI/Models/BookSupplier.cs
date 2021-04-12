@@ -3,6 +3,10 @@ using System.Collections.Generic;
 
 namespace BookAPI.Models
 {
+
+    ///<summary>
+    ///   BookSupplier with BookId , SupplierId
+    ///</summary>
     public class BookSupplier
     {
         public Guid BookId { get; set; }
