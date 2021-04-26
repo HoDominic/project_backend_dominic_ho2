@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using AutoMapper;
+using BookAPI.DTO;
 using BookAPI.Models;
 using BookAPI.Repositories;
 
@@ -11,6 +13,12 @@ namespace BookAPI.Services
         Task<Book> AddBook(Book book);
         Task<Book> DeleteBook(Book book);
         Task<List<Author>> GetAuthors();
+
+        Task<List<AuthorDTO>> GetAuthorsDTO();
+
+
+
+
         Task<List<Book>> GetBooks(bool includeAuthor);
         Task<List<BookGenre>> GetGenres();
 
@@ -29,7 +37,9 @@ namespace BookAPI.Services
 
         private ISupplierRepository _supplierRepository;
 
-        public RegistrationService(
+        private IMapper _mapper;
+
+        public RegistrationService(IMapper mapper,
         IAuthorRepository authorRepository,
         //IAuthorDTORepository authorDTORepository,
         IBookGenreRepository bookGenreRepository,
@@ -44,6 +54,8 @@ namespace BookAPI.Services
             _bookRepository = bookRepository;
             _supplierRepository = supplierRepository;
 
+            _mapper = mapper;
+
         }
 
 
@@ -52,6 +64,15 @@ namespace BookAPI.Services
         {
             return await _authorRepository.GetAuthors();
         }
+
+
+        public async Task<List<AuthorDTO>> GetAuthorsDTO()
+        {
+            return _mapper.Map<List<AuthorDTO>>(await _authorRepository.GetAuthors());
+        }
+
+
+
 
         public async Task<List<BookGenre>> GetGenres()
         {

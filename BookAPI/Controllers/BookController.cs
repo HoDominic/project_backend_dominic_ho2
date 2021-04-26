@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using BookAPI.Data;
 using BookAPI.DTO;
 using BookAPI.Models;
@@ -21,6 +22,8 @@ namespace BookAPI.Controllers
     {
 
         private IRegistrationService _registrationService;
+
+        private IMapper _mapper;
         public BookController(IRegistrationService registrationService)
         {
             _registrationService = registrationService;
@@ -35,22 +38,29 @@ namespace BookAPI.Controllers
 
         [HttpGet]
         [Route("authors")]
+        [MapToApiVersion("2.0")]
 
         public async Task<List<Author>> GetAuthors()
         {
             return await _registrationService.GetAuthors();
         }
 
-        //version 2
-        /*[HttpGet]
-        [Route("authorsdto")]*/
-        /*
-                public async Task<List<AuthorDTO>> GetAuthorsDTO()
-                {
-                    return await _context.AuthorsDTO.ToListAsync();
-                }
+        [HttpGet]
+        [Route("authors")]
 
-        */
+        public async Task<ActionResult<List<AuthorDTO>>> GetAuthorsDTO()
+        {
+            try
+            {
+                return _mapper.Map<List<AuthorDTO>>(await _registrationService.GetAuthorsDTO());
+            }
+            catch (Exception ex)
+            {
+                return new StatusCodeResult(500);
+            }
+        }
+
+
 
 
         ///<summary>
