@@ -111,8 +111,14 @@ namespace BookAPI.Controllers
         [MapToApiVersion("2.0")]
         public async Task<ActionResult<List<Book>>> GetBooks(string title = "", bool includeAuthor = false)
         {
-
-            return await _registrationService.GetBooks(includeAuthor);
+            try
+            {
+                return new OkObjectResult(await _registrationService.GetBooks(includeAuthor));
+            }
+            catch (Exception ex)
+            {
+                return new StatusCodeResult(500);
+            }
 
         }
 
