@@ -25,6 +25,7 @@ namespace BookAPI.Services
         Task<List<BookGenre>> GetGenres();
 
         Task<List<Supplier>> GetSuppliers();
+        Task<List<SupplierDTO>> GetSuppliersDTO();
 
     }
 
@@ -83,6 +84,10 @@ namespace BookAPI.Services
         public async Task<List<Supplier>> GetSuppliers()
         {
             return await _supplierRepository.GetSuppliers();
+        }
+        public async Task<List<SupplierDTO>> GetSuppliersDTO()
+        {
+            return _mapper.Map<List<SupplierDTO>>(await _supplierRepository.GetSuppliers());
         }
 
 

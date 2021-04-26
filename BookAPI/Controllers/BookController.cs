@@ -60,11 +60,27 @@ namespace BookAPI.Controllers
         ///</summary>
         [HttpGet]
         [Route("suppliers")]
+        [MapToApiVersion("2.0")]
         public async Task<ActionResult<List<Supplier>>> GetSuppliers()
         {
             try
             {
                 return new OkObjectResult(await _registrationService.GetSuppliers());
+            }
+            catch (Exception ex)
+            {
+                return new StatusCodeResult(500);
+            }
+        }
+
+        [HttpGet]
+        [Route("suppliers")]
+
+        public async Task<ActionResult<List<Supplier>>> GetSuppliersDTO()
+        {
+            try
+            {
+                return new OkObjectResult(await _registrationService.GetSuppliersDTO());
             }
             catch (Exception ex)
             {
