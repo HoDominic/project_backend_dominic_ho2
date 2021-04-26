@@ -10,6 +10,7 @@ namespace BookAPI.DTO
         {
             CreateMap<Supplier, SupplierDTO>();
             CreateMap<Book, BookDTO>();
+            CreateMap<BookGenre, BookGenreDTO>();
             // CreateMap<Author, AuthorDTO>();
         }
     }
