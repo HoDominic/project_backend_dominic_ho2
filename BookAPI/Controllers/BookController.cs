@@ -147,27 +147,7 @@ namespace BookAPI.Controllers
 
 
 
-        // [HttpPut]
-        // [Route("book")]
 
-        // public async Task<ActionResult<Book>> UpdateBook(Book book)
-        // {
-
-        //     try
-        //     {
-        //         Book newbook = book.Find(b => b.bookId == book.BookId);
-
-        //         _context.Books.Remove(book);
-        //         await _context.Books.AddAsync(newbook);
-        //         await _context.SaveChangesAsync();
-        //         return newbook;
-
-        //     }
-        //     catch (Exception ex)
-        //     {
-        //         return new OkObjectResult(book);
-        //     }
-        // }
 
 
     }

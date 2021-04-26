@@ -27,7 +27,7 @@ namespace BookTest
         [Fact]
         public async Task Get_Authors_Should_Return_Ok()
         {
-            var response = await Client.GetAsync("/api/genres/");
+            var response = await Client.GetAsync("/api/authors/");
             response.StatusCode.Should().Be(HttpStatusCode.OK);
 
             /*var authors = JsonConvert.DeserializeObject<List<Author>>(await response.Content.ReadAsStringAsync());
