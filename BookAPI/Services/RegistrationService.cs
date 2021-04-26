@@ -23,6 +23,7 @@ namespace BookAPI.Services
         Task<List<BookDTO>> GetBooksDTO(bool includeAuthor);
 
         Task<List<BookGenre>> GetGenres();
+        Task<List<BookGenreDTO>> GetGenresDTO();
 
         Task<List<Supplier>> GetSuppliers();
         Task<List<SupplierDTO>> GetSuppliersDTO();
@@ -79,6 +80,11 @@ namespace BookAPI.Services
         public async Task<List<BookGenre>> GetGenres()
         {
             return await _bookGenreRepository.GetGenres();
+        }
+
+        public async Task<List<BookGenreDTO>> GetGenresDTO()
+        {
+            return _mapper.Map<List<BookGenreDTO>>(await _bookGenreRepository.GetGenres());
         }
 
         public async Task<List<Supplier>> GetSuppliers()

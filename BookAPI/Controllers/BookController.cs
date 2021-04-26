@@ -36,6 +36,7 @@ namespace BookAPI.Controllers
         ///</summary>
         [HttpGet]
         [Route("genres")]
+        [MapToApiVersion("2.0")]
         public async Task<ActionResult<List<BookGenre>>> GetGenres()
         {
             try
@@ -50,6 +51,20 @@ namespace BookAPI.Controllers
         // {
         //     return await _registrationService.GetGenres();
         // }
+
+        [HttpGet]
+        [Route("genres")]
+        public async Task<ActionResult<List<BookGenreDTO>>> GetGenresDTO()
+        {
+            try
+            {
+                return new OkObjectResult(await _registrationService.GetGenresDTO());
+            }
+            catch (Exception ex)
+            {
+                return new StatusCodeResult(500);
+            }
+        }
 
 
 
