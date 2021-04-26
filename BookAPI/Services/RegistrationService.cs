@@ -20,6 +20,8 @@ namespace BookAPI.Services
 
 
         Task<List<Book>> GetBooks(bool includeAuthor);
+        Task<List<BookDTO>> GetBooksDTO(bool includeAuthor);
+
         Task<List<BookGenre>> GetGenres();
 
         Task<List<Supplier>> GetSuppliers();
@@ -88,6 +90,11 @@ namespace BookAPI.Services
         public async Task<List<Book>> GetBooks(bool includeAuthor)
         {
             return await _bookRepository.GetBooks(includeAuthor);
+        }
+
+        public async Task<List<BookDTO>> GetBooksDTO(bool includeAuthor)
+        {
+            return _mapper.Map<List<BookDTO>>(await _bookRepository.GetBooks(includeAuthor));
         }
 
         public async Task<Book> AddBook(Book book)

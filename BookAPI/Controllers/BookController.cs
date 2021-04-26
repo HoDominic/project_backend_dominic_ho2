@@ -108,12 +108,30 @@ namespace BookAPI.Controllers
 
         [HttpGet]
         [Route("books")]
+        [MapToApiVersion("2.0")]
         public async Task<ActionResult<List<Book>>> GetBooks(string title = "", bool includeAuthor = false)
         {
 
             return await _registrationService.GetBooks(includeAuthor);
 
         }
+
+
+        [HttpGet]
+        [Route("books")]
+        public async Task<ActionResult<List<Supplier>>> GetBooksDTO(bool includeAuthor = false)
+        {
+            try
+            {
+                return new OkObjectResult(await _registrationService.GetBooksDTO(includeAuthor));
+            }
+            catch (Exception ex)
+            {
+                return new StatusCodeResult(500);
+            }
+        }
+
+
 
 
 
