@@ -33,7 +33,7 @@ namespace BookAPI.Services
 
         private IAuthorRepository _authorRepository;
 
-        //private IAuthorDTORepository _authorDTORepository;
+
         private IBookGenreRepository _bookGenreRepository;
         private IBookRepository _bookRepository;
 
@@ -43,7 +43,6 @@ namespace BookAPI.Services
 
         public RegistrationService(IMapper mapper,
         IAuthorRepository authorRepository,
-        //IAuthorDTORepository authorDTORepository,
         IBookGenreRepository bookGenreRepository,
         IBookRepository bookRepository,
         ISupplierRepository supplierRepository

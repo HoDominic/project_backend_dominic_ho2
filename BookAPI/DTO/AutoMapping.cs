@@ -8,8 +8,8 @@ namespace BookAPI.DTO
     {
         public AutoMapping()
         {
-            CreateMap<Author, AuthorDTO>();
             CreateMap<Book, BookDTO>();
+            // CreateMap<Author, AuthorDTO>();
         }
     }
 }

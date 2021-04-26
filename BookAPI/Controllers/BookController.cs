@@ -13,6 +13,7 @@ using Microsoft.EntityFrameworkCore;
 namespace BookAPI.Controllers
 {
 
+
     [ApiController]
     [ApiVersion("1.0")]
     [ApiVersion("2.0")]
@@ -28,40 +29,6 @@ namespace BookAPI.Controllers
         {
             _registrationService = registrationService;
         }
-
-
-
-        ///<summary>
-        ///  Get authors
-        ///</summary>
-
-
-        [HttpGet]
-        [Route("authors")]
-        [MapToApiVersion("2.0")]
-
-        public async Task<List<Author>> GetAuthors()
-        {
-            return await _registrationService.GetAuthors();
-        }
-
-
-        [HttpGet]
-        [Route("authors")]
-
-        public async Task<ActionResult<List<AuthorDTO>>> GetAuthorsDTO()
-        {
-            try
-            {
-                return _mapper.Map<List<AuthorDTO>>(await _registrationService.GetAuthorsDTO());
-            }
-            catch (Exception ex)
-            {
-                return new StatusCodeResult(500);
-            }
-        }
-
-
 
 
         ///<summary>
@@ -85,6 +52,9 @@ namespace BookAPI.Controllers
         // }
 
 
+
+
+
         ///<summary>
         ///  Get suppliers
         ///</summary>
@@ -102,6 +72,59 @@ namespace BookAPI.Controllers
             }
         }
 
+
+        ///<summary>
+        ///  Get authors
+        ///</summary>
+
+
+        [HttpGet]
+        [Route("authors")]
+
+
+
+        public async Task<ActionResult<List<Author>>> GetAuthors()
+        {
+
+
+            try
+            {
+                return new OkObjectResult(await _registrationService.GetAuthors());
+            }
+            catch (Exception ex)
+            {
+                return new StatusCodeResult(500);
+            }
+
+        }
+
+
+        ///<summary>
+        ///  Get authors dto
+        ///</summary>
+        [HttpGet]
+        [Route("authors")]
+
+
+        public async Task<ActionResult<List<AuthorDTO>>> GetAuthorsDTO()
+        {
+            try
+            {
+                return _mapper.Map<List<AuthorDTO>>(await _registrationService.GetAuthorsDTO());
+            }
+            catch (Exception ex)
+            {
+                return new StatusCodeResult(500);
+            }
+        }
+
+
+
+
+
+
+
+
         ///<summary>
         ///  Get books
         ///</summary>
@@ -109,6 +132,7 @@ namespace BookAPI.Controllers
         [HttpGet]
         [Route("books")]
         [MapToApiVersion("2.0")]
+
         public async Task<ActionResult<List<Book>>> GetBooks(string title = "", bool includeAuthor = false)
         {
             try
@@ -122,9 +146,12 @@ namespace BookAPI.Controllers
 
         }
 
-
+        ///<summary>
+        ///  Get BooksDTO
+        ///</summary>
         [HttpGet]
         [Route("books")]
+
         public async Task<ActionResult<List<Supplier>>> GetBooksDTO(bool includeAuthor = false)
         {
             try
@@ -142,7 +169,7 @@ namespace BookAPI.Controllers
 
 
         ///<summary>
-        ///  Posta book
+        ///  Post a book
         ///</summary>
 
         [HttpPost]

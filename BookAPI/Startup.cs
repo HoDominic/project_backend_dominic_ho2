@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 using BookAPI.Configuration;
 using BookAPI.Controllers;
 using BookAPI.Data;
-using BookAPI.JWT;
 using BookAPI.Repositories;
 using BookAPI.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -62,29 +61,19 @@ namespace BookAPI
 
             services.AddTransient<IRegistrationService, RegistrationService>();
 
+            services.AddApiVersioning(config =>
+        {
+            config.DefaultApiVersion = new ApiVersion(1, 0);
+            config.AssumeDefaultVersionWhenUnspecified = true;
+            config.ReportApiVersions = true;
+            config.ApiVersionReader = new HeaderApiVersionReader("api-version");
+        });
+
 
             //authentication
-            var key = "this is my test key";
 
 
-            services.AddAuthentication(x =>
-           {
-               x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-               x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-           }).AddJwtBearer(x =>    //JwtBearer decrypteert de key
-           {
-               x.RequireHttpsMetadata = false;
-               x.SaveToken = true;
-               x.TokenValidationParameters = new TokenValidationParameters
-               {
-                   ValidateIssuerSigningKey = true,
-                   IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(key)),
-                   ValidateIssuer = false,
-                   ValidateAudience = false
-               };
-           });
 
-            services.AddSingleton<IJwtAuthenticationManager>(new JwtAuthenticationManager(key));
 
 
             services.AddSwaggerGen(c =>
@@ -110,15 +99,11 @@ namespace BookAPI
                 var xmlCommentsFullPath = Path.Combine(AppContext.BaseDirectory, xmlCommentsFile);
 
                 c.IncludeXmlComments(xmlCommentsFullPath);
+
+                c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First()); //This line
             });
 
-            services.AddApiVersioning(config =>
-            {
-                config.DefaultApiVersion = new ApiVersion(1, 0);
-                config.AssumeDefaultVersionWhenUnspecified = true;
-                config.ReportApiVersions = true;
-                config.ApiVersionReader = new HeaderApiVersionReader("api-version");
-            });
+
 
 
         }
@@ -133,6 +118,7 @@ namespace BookAPI
                 app.UseSwaggerUI(c =>
                {// swagger naar Route verplaatsen (localhost:5000/index.html)
                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "BookAPI v1");
+
                    //  c.RoutePrefix = "";
                });
             }
