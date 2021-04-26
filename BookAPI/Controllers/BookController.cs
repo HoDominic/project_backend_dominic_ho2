@@ -111,6 +111,7 @@ namespace BookAPI.Controllers
 
         [HttpGet]
         [Route("authors")]
+        [MapToApiVersion("2.0")]
 
 
 
