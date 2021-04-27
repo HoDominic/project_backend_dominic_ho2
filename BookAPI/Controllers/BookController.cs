@@ -7,13 +7,14 @@ using BookAPI.Data;
 using BookAPI.DTO;
 using BookAPI.Models;
 using BookAPI.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace BookAPI.Controllers
 {
 
-
+    [Authorize]
     [ApiController]
     [ApiVersion("1.0")]
     [ApiVersion("2.0")]

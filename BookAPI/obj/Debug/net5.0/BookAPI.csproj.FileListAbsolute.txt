@@ -122,3 +122,6 @@ C:\Users\domin\Desktop\MCT2\backend-programming\labo\project_backend_dominic_ho2
 C:\Users\domin\Desktop\MCT2\backend-programming\labo\project_backend_dominic_ho2\BookAPI - services\obj\Debug\net5.0\BookAPI.genruntimeconfig.cache
 C:\Users\domin\Desktop\MCT2\backend-programming\labo\project_backend_dominic_ho2\BookAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\domin\Desktop\MCT2\backend-programming\labo\project_backend_dominic_ho2\BookAPI\obj\Debug\net5.0\BookAPI.csprojAssemblyReference.cache
+c:\Users\domin\Desktop\MCT2\backend-programming\labo\project_backend_dominic_ho2\BookAPI\bin\Debug\net5.0\AutoMapper.dll
+c:\Users\domin\Desktop\MCT2\backend-programming\labo\project_backend_dominic_ho2\BookAPI\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+c:\Users\domin\Desktop\MCT2\backend-programming\labo\project_backend_dominic_ho2\BookAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Versioning.dll

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FJAXFe9kvX19zy1Bg8XWhX+YMTzxQuxP4YkJ4ZwxYS00S9LlrVrxW6hK7ERODMnp7hUkrSMmineuBxhC5XlMCw==",
+  "dgSpecHash": "OxH3RpjSygrpmkIoCdgIbpgqB9Ppxpq3a2qM5v6JkSzYf/+UJVbCtNjyHdg6gOrd7ag1By70ND9dIsJ/NgwQfA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\domin\\Desktop\\MCT2\\backend-programming\\labo\\project_backend_dominic_ho2\\BookAPI\\BookAPI.csproj",
+  "projectFilePath": "c:\\Users\\domin\\Desktop\\MCT2\\backend-programming\\labo\\project_backend_dominic_ho2\\BookAPI\\BookAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\domin\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\domin\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
