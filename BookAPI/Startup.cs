@@ -47,6 +47,16 @@ namespace BookAPI
 
             services.AddControllers();
 
+            services.AddAuthentication(option =>
+            {
+                option.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                option.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(options =>
+            {
+                options.Authority = "";
+                options.Audience = "";
+            });
+
 
 
             services.AddTransient<IRegistrationContext, RegistrationContext>();
