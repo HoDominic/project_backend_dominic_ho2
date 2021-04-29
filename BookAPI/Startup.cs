@@ -124,6 +124,9 @@ namespace BookAPI
                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "BookAPI v1");
 
                    //  c.RoutePrefix = "";
+
+                   c.DefaultModelExpandDepth(2);//Swagger UI bewerken
+                   c.DisplayRequestDuration();
                });
             }
 
