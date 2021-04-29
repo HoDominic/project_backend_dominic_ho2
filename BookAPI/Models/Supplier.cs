@@ -17,6 +17,6 @@ namespace BookAPI.Models
 
 
         [JsonIgnore]
-        public List<BookSupplier> BookSuppliers { get; set; }
+        public ICollection<BookSupplier> BookSuppliers { get; set; }
     }
 }

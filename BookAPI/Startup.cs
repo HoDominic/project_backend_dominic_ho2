@@ -53,8 +53,8 @@ namespace BookAPI
                 option.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
             }).AddJwtBearer(options =>
             {
-                options.Authority = "";
-                options.Audience = "";
+                options.Authority = "https://dev-txl0aste.eu.auth0.com/";
+                options.Audience = "https://bookapi";
             });
 
 
@@ -78,12 +78,6 @@ namespace BookAPI
             config.ReportApiVersions = true;
             config.ApiVersionReader = new HeaderApiVersionReader("api-version");
         });
-
-
-            //authentication
-
-
-
 
 
             services.AddSwaggerGen(c =>

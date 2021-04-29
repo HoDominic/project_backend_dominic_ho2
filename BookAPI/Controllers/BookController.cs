@@ -14,7 +14,7 @@ using Microsoft.EntityFrameworkCore;
 namespace BookAPI.Controllers
 {
 
-    [Authorize]
+    //[Authorize]
     [ApiController]
     [ApiVersion("1.0")]
     [ApiVersion("2.0")]
@@ -46,6 +46,7 @@ namespace BookAPI.Controllers
             }
             catch (Exception ex)
             {
+                Console.Write(ex);
                 return new StatusCodeResult(500);
             }
         }
@@ -109,7 +110,7 @@ namespace BookAPI.Controllers
         ///  Get authors
         ///</summary>
 
-
+        [Authorize]
         [HttpGet]
         [Route("authors")]
         [MapToApiVersion("2.0")]
