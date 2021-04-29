@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BookAPI</name>
+    </assembly>
+    <members>
+        <member name="M:BookAPI.Controllers.BookController.GetGenres">
+            <summary>
+              Get genres
+            </summary>
+        </member>
+        <member name="M:BookAPI.Controllers.BookController.GetGenresDTO">
+            <summary>
+              Get genres
+            </summary>
+        </member>
+        <member name="M:BookAPI.Controllers.BookController.GetSuppliers">
+            <summary>
+              Get suppliers
+            </summary>
+        </member>
+        <member name="M:BookAPI.Controllers.BookController.GetSuppliersDTO">
+            <summary>
+              Get suppliers
+            </summary>
+        </member>
+        <member name="M:BookAPI.Controllers.BookController.GetAuthors">
+            <summary>
+              Get authors
+            </summary>
+        </member>
+        <member name="M:BookAPI.Controllers.BookController.GetAuthorsDTO">
+            <summary>
+              Get authors dto
+            </summary>
+        </member>
+        <member name="M:BookAPI.Controllers.BookController.GetBooks(System.String,System.Boolean)">
+            <summary>
+              Get books
+            </summary>
+        </member>
+        <member name="M:BookAPI.Controllers.BookController.GetBooksDTO(System.Boolean)">
+            <summary>
+              Get BooksDTO
+            </summary>
+        </member>
+        <member name="M:BookAPI.Controllers.BookController.AddBook(BookAPI.Models.Book)">
+            <summary>
+              Post a book
+            </summary>
+        </member>
+        <member name="M:BookAPI.Controllers.BookController.DeleteBook(BookAPI.Models.Book)">
+            <summary>
+              Delete a book
+            </summary>
+        </member>
+        <member name="P:BookAPI.Models.Author.AuthorId">
+            <summary>
+               Author with AuthorId,Name,Age and Country
+            </summary>
+        </member>
+        <member name="T:BookAPI.Models.Book">
+            <summary>
+               Book with BookId ,Title, Description, Year,AuthorId,BookGenreId 
+            </summary>
+        </member>
+        <member name="T:BookAPI.Models.BookSupplier">
+            <summary>
+               BookSupplier with BookId , SupplierId
+            </summary>
+        </member>
+        <member name="T:BookAPI.Models.Supplier">
+            <summary>
+              Supplier with SupplierId and Name
+            </summary>
+        </member>
+    </members>
+</doc>
