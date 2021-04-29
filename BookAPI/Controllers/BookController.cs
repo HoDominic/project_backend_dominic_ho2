@@ -8,6 +8,7 @@ using BookAPI.DTO;
 using BookAPI.Models;
 using BookAPI.Services;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -35,6 +36,15 @@ namespace BookAPI.Controllers
         ///<summary>
         ///  Get genres
         ///</summary>
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        /// <param name="bookGenreId"> The id of the bookgenre</param>
+        /// <param name="genre"> The name of the bookgenre</param>
+        ///<response code="200">Returns different bookgenres</response>
+
+
+
         [HttpGet]
         [Route("genres")]
         [MapToApiVersion("2.0")]
@@ -54,6 +64,9 @@ namespace BookAPI.Controllers
         //     return await _registrationService.GetGenres();
         // }
 
+        ///<summary>
+        ///  Get genres
+        ///</summary>
         [HttpGet]
         [Route("genres")]
         public async Task<ActionResult<List<BookGenreDTO>>> GetGenresDTO()
@@ -75,6 +88,14 @@ namespace BookAPI.Controllers
         ///<summary>
         ///  Get suppliers
         ///</summary>
+
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        /// <param name="supplierId"> The id of the supplier</param>
+        /// <param name="name"> The name of the supplier</param>
+        ///<response code="200">Returns different suppliers</response>
+
         [HttpGet]
         [Route("suppliers")]
         [MapToApiVersion("2.0")]
@@ -90,6 +111,9 @@ namespace BookAPI.Controllers
             }
         }
 
+        ///<summary>
+        ///  Get suppliers
+        ///</summary>
         [HttpGet]
         [Route("suppliers")]
 
@@ -109,6 +133,15 @@ namespace BookAPI.Controllers
         ///<summary>
         ///  Get authors
         ///</summary>
+
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        /// <param name="authorId"> The id of the author</param>
+        /// <param name="name"> The name of the author</param>
+        /// <param name="age"> The age of the author</param>
+        /// <param name="country"> The country of the author</param>
+        ///<response code="200">Returns different authors</response>
 
         [Authorize]
         [HttpGet]
@@ -163,6 +196,16 @@ namespace BookAPI.Controllers
         ///  Get books
         ///</summary>
 
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        /// <param name="bookId"> The id of the book</param>
+        /// <param name="title"> The title of the book</param>
+        /// <param name="description"> The description of the book</param>
+        /// <param name="year"> The year of the book</param>
+        /// <param name="authorId"> The id of the author</param>
+        ///<response code="200">Returns different books</response>
+
         [HttpGet]
         [Route("books")]
         [MapToApiVersion("2.0")]
@@ -205,6 +248,8 @@ namespace BookAPI.Controllers
         ///<summary>
         ///  Post a book
         ///</summary>
+
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
 
         [HttpPost]
         [Route("book")]
